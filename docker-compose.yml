@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  
+  megahome:
+    image: 'megahome'
+    container_name: megahome
+    build: .
+    ports:
+      - "80"
+    networks:
+      - megagera_network
+
+networks:
+  megagera_network:
+    external: true
+
