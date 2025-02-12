@@ -41,10 +41,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/', (req, res) => {
-  console.log(req.validateData);
   return res.render('dashboard', {data: req.validateData});
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
