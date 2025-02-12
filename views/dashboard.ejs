@@ -1,55 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MegaHome</title>
-    <style>
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .box {
-            width: 150px;
-            height: 150px;
-            margin: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #28a745;
-            box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2);
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .box:hover {
-            transform: scale(1.05);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MegaHome</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 <body>
-    <h1>Welcome, <%= username %>!</h1>
-    <h2>Your Services</h2>
+
+  <div class="form-container">
+
+    <div class="titleHeader">
+      <h1>MegaHome<h1>
+      <h2>Your Services</h2>
+    </div>
+    
     <div class="container">
-      <div class="box" onclick="location.href='http://megagoal.megagera.com'">
-        MegaGoal
-      </div>
-      <div class="box" onclick="location.href='http://megamedia.megagera.com'">
-        MegaMedia
-      </div>
-      <div class="box" onclick="location.href='http://megadocu.megagera.com'">
-        MegaDocu
-      </div>
       <div class="box" onclick="location.href='http://megaauth.megagera.com'">
         MegaAuth
       </div>
-      <!-- <% if (username.roles && username.roles.length > 0) { %>
-        <% roles.forEach(role => { %>
-          <div class="box" onclick="location.href='<%= role.url %>'">
-            <%= role.name %>
-          </div>
+      <% if (data.permissions && data.permissions.length > 0) { %>
+        <% data.permissions.forEach(permission => { %>
+          <% if permission.type == "access" && permission.name == "megagoal" { %>
+            <div class="box" onclick="location.href='https://megagoal.megagera.com'">
+              MegaGoal
+            </div>
+          <% } %>
+          <% if permission.type == "access" && permission.name == "megamedia" { %>
+            <div class="box" onclick="location.href='https://megamedia.megagera.com'">
+              MegaMedia
+            </div>
+          <% } %>
+          <% if permission.type == "access" && permission.name == "megadocu" { %>
+            <div class="box" onclick="location.href='https://megadocu.megagera.com'">
+              MegaDocu
+            </div>
+          <% } %>
         <% }); %>
       <% } else { %>
         <p>No services available.</p>
-      <% } %> -->
+      <% } %>
     </div>
+  </div>
 </body>
 </html>
