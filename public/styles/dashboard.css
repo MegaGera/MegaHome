@@ -1,54 +1,99 @@
-/* General Reset */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
 }
 
-/* Main layout */
 body {
-  background-color: #f0f0f0; /* Slightly gray background */
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align admin panel near the top */
-  min-height: 100vh;
-  padding: 20px;
-  height: 100%;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+.form-container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.08);
+  padding: 40px 32px 32px 32px;
+  min-width: 340px;
+  max-width: 900px;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .titleHeader {
   text-align: center;
-  height: 12vh;
+  margin-bottom: 32px;
+}
+.titleHeader h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #22223b;
+  margin-bottom: 0.25em;
+}
+.titleHeader h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #4a5568;
 }
 
-/* Container styling */
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  max-width: 900px;
-  background-color: #ffe5e5; /* Slightly red */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 30px;
+  gap: 24px;
+  justify-content: center;
 }
 
 .box {
-  width: 150px;
-  height: 150px;
-  margin: 10px;
+  background: #f7fafc;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(60, 60, 120, 0.07);
+  border: 1.5px solid #e2e8f0;
+  width: 160px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #28a745;
-  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2);
-  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #22223b;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.18s, background 0.2s, color 0.2s;
+  user-select: none;
 }
 .box:hover {
-  transform: scale(1.05);
+  background: #edf2fb;
+  color: #3a86ff;
+  box-shadow: 0 6px 24px rgba(58, 134, 255, 0.10);
+  transform: translateY(-4px) scale(1.04);
+}
+
+p {
+  text-align: center;
+  color: #6c757d;
+  margin-top: 24px;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    padding: 24px 8px;
+  }
+  .container {
+    gap: 14px;
+  }
+  .box {
+    width: 100px;
+    height: 80px;
+    font-size: 0.95rem;
+  }
+  .titleHeader h1 {
+    font-size: 1.5rem;
+  }
 }
