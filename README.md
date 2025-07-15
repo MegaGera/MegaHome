@@ -9,6 +9,7 @@ Just the home microservice inside the **Mega** architecture.
 - [MegaProxy](https://github.com/MegaGera/MegaProxy): Proxy of the MegaGera ecosystem
 - [MegaAuth](https://github.com/MegaGera/MegaAuth): Authentication and authorization service
 - [MegaGoal](https://github.com/MegaGera/MegaGoal): Application for storing football matches viewed
+- [MegaMedia](https://github.com/MegaGera/MegaMedia): Services to serve and handle static media
 - MegaDocu: Own documentation application built with [Docusaurus](https://docusaurus.io/)
 
 ## Production
@@ -22,3 +23,7 @@ To try it or know more about it just message me and I will give you access!
 Frontend views developed with [ejs](https://ejs.co/) javascript templates.
 
 All the microservices are running with docker.
+
+## License
+
+This project is licensed under the GPL-3.0 License. See the LICENSE file for details.
